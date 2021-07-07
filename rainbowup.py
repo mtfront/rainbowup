@@ -23,7 +23,7 @@ Usage:
 # parsing args
 parser = argparse.ArgumentParser(description=doc, formatter_class=argparse.RawTextHelpFormatter)
 parser.add_argument(dest="path", help="The path of image or directory needs to be rainbowed up")
-parser.add_argument('-a', '--alpha', type=int, action='store', default=130, help="The opacity of the filter, range from 0 (not visible) - 255")
+parser.add_argument('-a', '--alpha', type=int, action='store', default=130, help="The opacity of the filter, default to 130. range from 0 (not visible) - 255")
 args = parser.parse_args()
 path = args.path
 alpha = args.alpha
