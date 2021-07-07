@@ -5,6 +5,7 @@ import glob
 # run python3 -m pip install --upgrade Pillow if you didn't install PIL already
 from PIL import Image
 RAINBOW_FILTER = 'filter.png'
+RAINBOW_SMOOTH = 'filter_s.jpeg'
 
 doc = """
 This is a script created by Mt. Front to bulk apply rainbow filter to images.
@@ -17,18 +18,20 @@ Find the source code at https://github.com/mfcndw/rainbowup
 *** Warning: This script has only been tested on MacOS ***
 
 Usage:
-    python3 rainbowup.py path [-a] [-h]
+    python3 rainbowup.py path [-a] [-h] [-s]
 """
 
 # parsing args
 parser = argparse.ArgumentParser(description=doc, formatter_class=argparse.RawTextHelpFormatter)
 parser.add_argument(dest="path", help="The path of image or directory needs to be rainbowed up")
 parser.add_argument('-a', '--alpha', type=int, action='store', default=130, help="The opacity of the filter, default to 130. range from 0 (not visible) - 255")
+parser.add_argument('-s', '--smooth', action='store_true', default=False, help="Switch to a smooth rainbow filter. Default to false")
 args = parser.parse_args()
 path = args.path
 alpha = args.alpha
+smooth = args.smooth
 
-filter = Image.open(RAINBOW_FILTER).convert('RGBA')
+filter = Image.open(RAINBOW_FILTER if not smooth else RAINBOW_SMOOTH).convert('RGBA')
 # we need the original pic to change alpha
 filter.putalpha(alpha)
 
@@ -45,7 +48,7 @@ def rainbowup_file(path):
 if os.path.isfile(path):
     rainbowup_file(path)
 elif os.path.isdir(path):
-    images = [glob.glob(path + '/*.%s' % ext) for ext in ["jpg", "png"]]
+    images = [glob.glob(path + '/*.%s' % ext) for ext in ["jpg", "jpeg", "png"]]
     for type in images:
         for i in type:
             rainbowup_file(i)
