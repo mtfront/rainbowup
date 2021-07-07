@@ -1,7 +1,7 @@
 # rainbowup
 This is a script created by Mt. Front to bulk apply rainbow filter to images.
 
-On 7/7/2021, Chinese government banned all Weread (largest Chinese social network) channels related to LGBT rights. 
+On 7/7/2021, Chinese government banned all Wechat (largest Chinese social network) channels related to LGBT rights. 
 This script is just a silent protest.
 
 Find the source code at https://github.com/mfcndw/rainbowup
