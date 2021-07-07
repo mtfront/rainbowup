@@ -9,9 +9,10 @@ Find the source code at https://github.com/mfcndw/rainbowup
 ***Warning: This script has only been tested on MacOS***
 
 ## Example
-| Original      | Rainbowed |
-| ----------- | ----------- |
-| <img width="300" alt="test_profile" src="https://user-images.githubusercontent.com/5817602/124720941-84046d80-debd-11eb-9c74-d61eaffef99f.png">|<img width="300" alt="test_profile_rainbowed" src="https://user-images.githubusercontent.com/5817602/124720953-86ff5e00-debd-11eb-8ba0-ae2effaa281c.png">|
+| Original      | Rainbowed | Smooth |
+| ----------- | ----------- | ----------- |
+| <img width="300" alt="test_profile" src="https://user-images.githubusercontent.com/5817602/124720941-84046d80-debd-11eb-9c74-d61eaffef99f.png">|<img width="300" alt="test_profile_rainbowed" src="https://user-images.githubusercontent.com/5817602/124720953-86ff5e00-debd-11eb-8ba0-ae2effaa281c.png">|<img width="300" alt="test_profile" src="https://user-images.githubusercontent.com/5817602/124829818-f9a82200-df2d-11eb-8eaa-5164aca65d1b.png">|
+
 
 
 ## Usage:
