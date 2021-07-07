@@ -16,7 +16,7 @@ Find the source code at https://github.com/mfcndw/rainbowup
 
 
 ## Usage:
-`python3 rainbowup.py path [-a] [-h] [-s]`
+`python3 rainbowup.py path [-a] [-s] [-f] [-h]`
 
 ### required arguments:
  * path: The path of image or directory needs to be rainbowed up
@@ -25,3 +25,4 @@ Find the source code at https://github.com/mfcndw/rainbowup
  * -h, --help: show this help message and exit
  * -a, --alpha: The opacity of the filter, default to 130. range from 0 (not visible) - 255
  * -s, --smooth: Switch to a smooth rainbow filter. Default to false
+ * -f, --filter: Path to custom filter image

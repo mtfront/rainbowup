@@ -18,7 +18,7 @@ Find the source code at https://github.com/mfcndw/rainbowup
 *** Warning: This script has only been tested on MacOS ***
 
 Usage:
-    python3 rainbowup.py path [-a] [-h] [-s]
+   `python3 rainbowup.py path [-a] [-s] [-f] [-h]`
 """
 
 # parsing args
@@ -26,12 +26,14 @@ parser = argparse.ArgumentParser(description=doc, formatter_class=argparse.RawTe
 parser.add_argument(dest="path", help="The path of image or directory needs to be rainbowed up")
 parser.add_argument('-a', '--alpha', type=int, action='store', default=130, help="The opacity of the filter, default to 130. range from 0 (not visible) - 255")
 parser.add_argument('-s', '--smooth', action='store_true', default=False, help="Switch to a smooth rainbow filter. Default to false")
+parser.add_argument('-f', '--filter', type=str, action='store', default=RAINBOW_FILTER, help="Path to custom filter image")
 args = parser.parse_args()
 path = args.path
 alpha = args.alpha
 smooth = args.smooth
+filter_path = args.filter
 
-filter = Image.open(RAINBOW_FILTER if not smooth else RAINBOW_SMOOTH).convert('RGBA')
+filter = Image.open(filter_path if not smooth else RAINBOW_SMOOTH).convert('RGBA')
 # we need the original pic to change alpha
 filter.putalpha(alpha)
 
